@@ -1,0 +1,250 @@
+html , body{
+  margin: 0px;
+    height: 1024px;
+    width: 100%;
+    position: absolute;
+   
+}
+
+* {
+    font-family: myFirstFont;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/brandon-grot/Brandon_reg.otf);
+}
+
+#Nav{
+  width:100%;
+  height: 50px; 
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(75,59,125);
+}
+
+
+#navbar{
+  
+  width: 100%;
+    height: 100%;
+    font-size: 15px;
+    font-family: Times 
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    
+}
+
+
+#navbar ul, li{
+    height: auto;
+    text-align: center;
+    display: inline;
+    padding-right: 15px;
+  
+
+}
+
+#navbar li a{
+  text-decoration: none;
+    color: white;
+}
+
+#menu{
+  padding-bottom: 25px;
+    padding-top: 15px;
+    padding-right: 15px;
+  float: right;
+  position: relative; 
+}
+
+body {
+  background-color: white;
+}
+
+
+
+
+
+
+
+
+
+#filter {
+	background-color: rgb(75,59,125);
+	text-align: center;
+	color: white;
+	font-size: 28px;
+	padding-top: 1%;
+	margin-bottom: 1%;
+}
+#filter-content {
+	color: black;
+	width: 100%;
+	height: 300px;
+	display: inline-block;
+	margin: 0 4%;
+}
+#filter-content p {
+	border-bottom: 1px solid black;
+}
+#filter-content ul {
+	text-align: left;
+}
+#first-filter {
+	width: 30%;
+	height: 90%;
+	border: 1px solid black;
+	float: left;
+	background-color: white;
+	margin-right: 1%;
+}
+#second-filter {
+	width: 30%;
+	height: 90%;
+	border: 1px solid black;
+	float: left;
+	background-color: white;
+	margin-right: 1%;
+}
+#third-filter {
+	width: 30%;
+	height: 90%;
+	border: 1px solid black;
+	float: left;
+	background-color: white;
+}
+#filter-content li {
+	font-size: .5em;
+}
+
+
+
+
+
+
+
+
+
+#onfilter {
+	margin: 0 0 1% 1%;
+}
+#onfilter li {
+	margin-left: 1%;
+}
+#onfilter img {
+	width: 1%;
+}
+#onfilter a {
+	color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content{
+	width: 50%;
+	margin: 0 0 0 1%;
+	padding:0;
+	color:white;
+}
+#right {
+	float: right;
+}
+.profile-container{
+	width: 100%;
+	height:300px;
+	margin: 0;
+}
+.profile-picture{
+	z-index: 1;
+	float: left;
+}	
+.profile-picture img{
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
+	border: 2px solid black;
+}
+.profile-info{
+	width:75%;
+	margin-left: 10%; 
+	padding-top: 4%;
+}
+.profile-info-container{
+	background-color: rgb(75,59,125);
+	margin: 0;
+	text-align: center;
+	border-radius: 10px;
+	font-size: .8em;
+	border: 1px solid black; 
+    box-shadow: 50px 25px 25px black;
+}
+#cool{
+	background-color: rgb(75,59,125);
+	outline: 0;
+	border: 0;
+	text-align: center;
+}
+button {
+	background-color: #c6ce45;
+	color: white;
+	margin-bottom: 1%;
+	outline: 0;
+	border: 0;
+	padding: 5px;
+	color: black;
+	cursor: pointer;
+	font-size: 16px;
+	margin-right: 20px;
+	border-radius: 20px;
+}
+
+
+
+#new{
+    width: 100%;
+    height: 32px;
+    padding-top: 20px;
+    background-color: rgb(75,59,125);
+}
+
+#new a{
+    text-decoration: none;
+    float: right;
+    color: white;
+    background-color: rgb(75,59,125);
+    margin-right: 20px;
+    border-radius: 20px;
+    padding: 17px;
+    
+}
+
+#new a:hover{
+    opacity: .5;
+}
+
+
+
+
+
+

@@ -1,0 +1,150 @@
+html , body{
+    margin: 0px;
+    height: 1024px;
+    width: 100%;
+   
+}
+
+* {
+    font-family: 'myFirstFont';
+}
+
+@font-face {
+    font-family: 'myFirstFont';
+    src: url(../fonts/brandon-grot/Brandon_reg.otf);
+}
+
+#Nav{
+    width:100%;
+    height: 50px;   
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(75,59,125);
+}
+
+
+#navbar{
+    
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    font-family: Times 
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    
+}
+
+
+#navbar ul, li{
+    height: auto;
+    min-height: 
+    text-align: center;
+    display: inline;
+    padding-right: 15px;
+  
+
+}
+
+
+#navbar li a{
+    text-decoration: none;
+        color: white;
+    
+}
+ #menu{
+    padding-bottom: 25px;
+    padding-top: 15px;
+    padding-right: 15px;
+    float: right;
+    position: relative; 
+ }
+
+ #content{
+    width: 100%;
+    height: auto;
+    background-color: rgb(75,59,125);
+    /*background-image: url(../images/Debate-Day-Group.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;*/
+ }
+ /* ADD min height at 500px so there will be enought space*/
+
+#content_contanier{
+    width: 80%;
+    height: 100%;
+  
+    position: relative;
+    margin: auto;
+    text-align: center;
+} 
+
+#content_title{
+    padding: 20px 0px;
+
+}
+
+
+#SignUpDiv {
+    width: 100%;
+    height: 32px;
+    padding-top: 20px;
+}
+
+#SignUpDiv a{
+    text-decoration: none;
+    float: right;
+    color: white;
+    background-color: rgb(75,59,125);
+    margin-right: 20px;
+    border-radius: 20px;
+    padding: 17px;
+    
+}
+
+#SignUpDiv a:hover{
+    opacity: .5;
+}
+.profile_div{
+    height: 380px;
+    width: 350px;
+    display: inline-block;
+    margin: 20px 12px;
+    color: black;
+    border: 1px black solid;
+    background-color: white;
+    padding-bottom: 20px;
+    
+}
+
+ #footer{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    text-align: center;
+
+ }
+
+.profile_div img{
+    border-radius: 100%;
+    width: 183px;
+    height: 175px;
+}
+/*
+.green{
+    background-color: rgba(186,199,54,.8);
+}
+.black{
+    background-color: rgba(1,1,1,.8);
+}
+.purp{
+    background-color: rgba(75,59,125,.8);
+}*/
+ .Foot_Tab{
+    margin: 18px 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: inline-block;
+  
+ }
