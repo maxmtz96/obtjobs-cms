@@ -1,6 +1,6 @@
+<link rel="stylesheet" type="text/css" href="css/foot.css">
 
 <div id="footer">
-<link rel="stylesheet" type="text/css" href="css/foot.css">
 	<footer>
 		<ul class="menu">
 			<div class="menu-item">

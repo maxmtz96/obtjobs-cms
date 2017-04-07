@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 30, 2017 at 05:39 PM
+-- Generation Time: Mar 30, 2017 at 11:35 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.0.15
 
@@ -13,6 +13,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `obtjobs-hiring`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `multiupload`
+--
+
+CREATE TABLE `multiupload` (
+  `id` int(15) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -57,6 +68,12 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `password`, `sal
 --
 
 --
+-- Indexes for table `multiupload`
+--
+ALTER TABLE `multiupload`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -68,6 +85,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `multiupload`
+--
+ALTER TABLE `multiupload`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --

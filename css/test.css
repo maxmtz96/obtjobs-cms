@@ -1,155 +1,301 @@
-html , body{
+ html, body {
     margin: 0px;
-    line-height:1.618;
 }
-
 * {
     font-family: myFirstFont;
 }
-
 @font-face {
     font-family: myFirstFont;
-    src: url(Brandon_reg.otf);
+    src: url(../fonts/brandon-grot/Brandon_reg.otf);
 }
-
-#Nav{
-    width:100%;
-    height: 50px;   
+#Nav {
+    width: 100%;
+    height: 50px;
     text-align: center;
-    background-color: rgb(75,59,125);
+    background-color: rgb(75, 59, 125);
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
-
-#navbar{
-    
+#navbar {
     width: 100%;
     height: 100%;
     font-size: 15px;
-    font-family: Times 
-    font-weight: bold;
+    font-family: Times font-weight: bold;
     text-align: center;
     color: white;
-    
 }
-
-
-#navbar ul, li{
+#navbar ul, li {
     height: auto;
-    min-height: 
-    text-align: center;
+    min-height: text-align: center;
     display: inline;
     padding-right: 15px;
-  
-
 }
-
-
-#navbar li a{
+#navbar li a {
     text-decoration: none;
-        color: white;
-    
-}
-#logout {
-    width: 100%;
-    height: 32px;
-    padding-top: 20px;
-}
-
-#logout a{
-    text-decoration: none;
-    float: right;
     color: white;
-    background-color: rgb(75,59,125);
-    margin-right: 20px;
-    border-radius: 20px;
-    padding: 17px;
-    
 }
- #menu{
+#menu {
     padding-bottom: 25px;
     padding-top: 15px;
     padding-right: 15px;
     float: right;
-    position: relative; 
- }
- 
- #sign-in{
-    display: inline-grid;
-    justify-content: all;
- }
+    position: relative;
+}   
 
-#page-header{
-text-align: center;
+#page-header {
+    text-align: center;
+    overflow: visible;
+    height: 150px;
+/*    background: white;*/
+    margin: auto;
+    width: 50%;
+    height: 25%
 }
-
-#avatar-img{
+#avatar-img {
     display: inline-block;
     width: 47%;
     vertical-align: top;
     text-align: center;
-
 }
-
-#name{
-    
-}
-
-#about{
+#about {
     text-align: center;
     justify-content: all;
 }
-
-#Edit{
+#Edit {
     text-align: center;
-
 }
-
-#Bio{
-    border: 2px solid black;
+#Resume {
     border-radius: 6px;
     padding: 3px;
     display: inline-block;
 }
-
-#personal-info{
-    display: inline-block;
-    width: 50%;
+#personal-info {
+    /* display: inline-flex;*/
+    padding: 40px;
 }
-
-#page-info{
+#page-info {
     background: white;
-    width: 75%;
+    width: 50%;
     margin: auto;
+    text-align: center;
+    padding: auto;
+    box-shadow: 25px 25px 25px;
 }
-
-#sign-in{
+#sign-in {
     padding-left: 750px;
 }
-
-#icons img{
-width: 50px;
-height: 50px;
-position: relative;
+#icons img {
+    width: 50px;
+    height: 50px;
+    position: relative;
 }
-
-#icons{
+#icons {
     text-align: center;
 }
-
-body{
-background: rgb(75,59,125);  
+body {
+    background: rgb(75, 59, 125);
 }
-
 button {
     text-transform: uppercase;
-  outline: 0;
-  background-color: rgb(75,59,125);
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
 }
+a {
+    text-decoration: none;
+    color: #00936E;
+}
+a:hover {
+    color: #006D59;
+}
+#bg {
+    position: absolute;
+    width: 50% background-image: url('http://f.cl.ly/items/0t2e0B1W1x3c1U3V2q1Z/eggshell-noise.png');
+    background-repeat: repeat;
+    opacity: 0.5;
+}
+.card {
+    background: #ffffff;
+    height: 560px;
+    width: 100%;
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid black;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, .05);
+    font-weight: 700;
+    margin-right: 50px;
+}
+.image-and-border {
+    width: 50px;
+    height: 100px
+}
+.profile {
+    width: 100%;
+    background: none;
+    height: auto;
+    min-height: 150px;
+    display: inline-block;
+}
+.profile img {
+    width: 94px;
+    height: 90px;
+    border-radius: 50%;
+    border-right: 25px;
+    top: 1.20em;
+    position: relative;
+    display: block;
+    margin-right: auto;
+    z-index: 100;
+    left: .1em;
+}
+.image-and-name {
+    width: 80%;
+    padding: 20px 10px;
+    margin: auto;
+    display: inline-block;
+}
+.border {
+    width: 96px;
+    height: 96px;
+    border-radius: 49px;
+    z-index: 99;
+    background: #444;
+    position: relative;
+    display: block;
+    top: -73px;
+    margin-right: auto;
+}
+
+/* Name */
+
+.name {
+    margin: 0 auto;
+    position: relative;
+    font-size: 1.1em;
+    left: 10px;
+}
+
+/* Statistics */
+
+.numbers {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+#stats {
+    color: #000;
+    text-align: center;
+    display: inline-block;
+    font-size: 10em;
+}
+.divider {
+    position: relative;
+    display: block;
+    width: 30%;
+    opacity: 0;
+    bottom: 3rem;
+    margin: 0 auto;
+    height: 1px;
+    z-index: 500;
+    background: #c4c5c4;
+}
+#stats td {
+    padding: 0.25rem .25em .35rem .5rem;
+}
+#stats td:first-child {
+    font-size: 1.1rem;
+    display: block;
+    text-align: right;
+    font-weight: 400;
+}
+#stats td:last-child {
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Edit Button */
+
+.btn{
+    text-align: center;
+}
+a.btn{
+    color: #fffffa;
+    text-decoration: none;
+}
+a.btn:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-follow{
+    background: #000000;
+    height: 32px;
+    width: 25%;
+    display: block;
+    margin: auto;
+    bottom: 1.25em;
+    left: 25%;
+    font-size: .8em;
+    font-weight: 700;
+    line-height: 34px;
+    border-radius: 2px;
+    border-bottom: 1px solid #006D59;
+}
+
+#edit-btn{
+    background: #000000;
+    height: 32px;
+    width: 25%;
+    display: block;
+    margin: auto;
+    bottom: 1.25em;
+    left: 25%;
+    font-size: .8em;
+    font-weight: 700;
+    line-height: 34px;
+    border-radius: 2px;
+    border-bottom: 1px solid #006D59;
+    color: #fffffa;
+    text-decoration: none;
+    margin-right: 6%;
+}
+
+/* End of Card CSS*/
+
+.abt-me {
+    border-radius: 3px;
+    border: 1px solid black;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, .05);
+}
+.upload {
+    border-radius: 3px;
+    border: 1px solid black;
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, .05);
+}
+#about input {
+    text-align: center;
+}
+p {
+    text-align: initial;
+}
+
+#resume-info{
+    margin-left: 0;
+    float: left;
+}
+
+#wrkexp2{
+    float: right;
+    margin-right: 0;
+}
+
+textarea {
+    width: 300px;
+}
+
