@@ -40,6 +40,7 @@
 									<p> "I am an aspiring Web Developer with an eye for detail and passion for efficient user experiences. 
 									I want to challenge myself at learning more advanced and technical languages."</p>
 									<div id="links">
+									
 										<img src="images/phone.png">
 										<img src="images/email.png">
 										<img src="images/Linkedin_icon.png">

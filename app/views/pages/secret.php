@@ -4,8 +4,8 @@
         <div id="SignUpDiv">
           <?php if(empty($users)): ?>
             <div id="SignUpDiv">
-              <a href="<?php echo BASE_URL; ?>/login.php">Sign In</a>
-              <a href="<?php echo BASE_URL; ?>/signup.php">Sign Up</a>
+              <a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
+              <a href="<?php echo BASE_URL; ?>">Home</a>
             </div>
           <?php else: ?>
             <div id="SignUpDiv">

@@ -12,14 +12,19 @@
         <input id="right" type="email" name="email" placeholder="Email Address"/>
         
         <input id="left" type="password" name="password" placeholder="Password"/>
-        <input id="right" type="password" name="" placeholder="Confirm Password"/> <label class="occupation">Occupation?:<select name="status">
+        <input id="right" type="password" name="" placeholder="Confirm Password"/> 
+
+        <label class="occupation">Occupation?:<select name="status">
+
           <option value="Student">Student</option>
           <option value="Staff">Staff Member</option>
+          
         </select>
         </label>
 
         <button type="submit">Create Account</button>
         <p class="message">Already registered? <a href="login.php">Login</a></p>
+        <p class="message">Empolyers sign up here <a href="employersignup.php">Login</a></p>
       </form>
     </div>
   </div>
