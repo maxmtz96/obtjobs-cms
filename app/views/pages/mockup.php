@@ -3,19 +3,18 @@
   <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/mockup.css">
 <div class="main-content131">    
   <div id="filter" onclick="acc()">
-    <div id="SignUpDiv">
-      <?php if(empty($_SESSION['user'])): ?>
         <div id="SignUpDiv">
-          <a href="<?php echo BASE_URL; ?>/login.php">Sign In</a>
-          <a href="<?php echo BASE_URL; ?>/signup.php">Sign Up</a>
+          <?php if(isset($_SESSION['employer'])): ?>
+            <a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
+            <a href="<?php echo BASE_URL; ?>/secret.php">Signed in as <?php echo e($_SESSION['employer']['username'], ENT_QUOTES, 'UTF-8'); ?></a>      
+          <?php elseif(isset($_SESSION['user'])): ?>
+            <a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
+            <a href="<?php echo BASE_URL; ?>/secret.php">Signed in as <?php echo e($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></a>
+          <?php else: ?>
+            <a href="<?php echo BASE_URL; ?>/login.php">Sign In</a>
+            <a href="<?php echo BASE_URL; ?>/signup.php">Sign Up</a>
+          <?php endif; ?>
         </div>
-      <?php else: ?>
-        <div id="SignUpDiv">
-          <a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-          <a href="<?php echo BASE_URL; ?>/secret.php">Signed in as <?php echo e($_SESSION['user']['firstname'], ENT_QUOTES, 'UTF-8'); ?></a>
-        </div>
-      <?php endif; ?>
-    </div>
     <p>PICK STUDENTS WHO ARE RIGHT FOR YOU!!!</p>
 
     <div id="filter-content">
@@ -68,37 +67,41 @@
  <?php if(empty($users)): ?>
   <p>something is wrong</p>
 <?php else: ?>
-    <?php foreach($users as $user): ?>
-      <div class="content">
-        <a href="<?php echo BASE_URL; ?>/secret.php?user=<?php echo $user['username']; ?>">
-          <div class="profile-container">
-            <div class="profile-picture">
-              <img src="<?php echo BASE_URL; ?>/images/<?php echo e($user['image']); ?>">  
-            </div>
-            <div class="profile-info">
-              <div class="profile-info-container">
-                <h1><?php echo e($user['firstname'].' '.$user['lastname']); ?></h1>
-                <h2>Web Design and Coding Fundamentals</h2>
-                <div id="cool">
-                  <?php if (empty($user['skill1'])): ?>
-                    <p></p>
-                  <?php else: ?>
-                    <button disabled><?php echo e($user['skill1']); ?></button>
-                    <button disabled><?php echo e($user['skill2']); ?></button>
-                    <button disabled><?php echo e($user['skill3']); ?></button>
-                  <?php endif; ?>
+  <?php foreach($users as $user): ?>
+    <?php if(empty($user['image'])): ?>
+        <?php next($user); ?> 
+      <?php else: ?>
+        <div class="content">
+          <a href="<?php echo BASE_URL; ?>/secret.php?user=<?php echo $user['username']; ?>">
+            <div class="profile-container">
+              <div class="profile-picture">
+                <img src="<?php echo BASE_URL; ?>/images/<?php echo e($user['image']); ?>">  
+              </div>
+              <div class="profile-info">
+                <div class="profile-info-container">
+                  <h1><?php echo e($user['firstname'].' '.$user['lastname']); ?></h1>
+                  <h2>Web Design and Coding Fundamentals</h2>
+                  <div id="cool">
+                    <?php if (empty($user['skill1'])): ?>
+                      <p></p>
+                    <?php else: ?>
+                      <button disabled><?php echo e($user['skill1']); ?></button>
+                      <button disabled><?php echo e($user['skill2']); ?></button>
+                      <button disabled><?php echo e($user['skill3']); ?></button>
+                    <?php endif; ?>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div id="links">
-              <img src="<?php echo BASE_URL; ?>/images/github-icon.png">
-              <img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png">
+              <div id="links">
+                <img src="<?php echo BASE_URL; ?>/images/github-icon.png">
+                <img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png">
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-    <?php endforeach; ?>
+          </a>
+        </div>
+    <?php endif; ?>
+  <?php endforeach; ?>
 <?php endif; ?> 
   
 

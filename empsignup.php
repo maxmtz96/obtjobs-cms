@@ -53,7 +53,7 @@
         	password,
         	salt,
         	email,
-        	firtname,
+        	firstname,
         	lastname,
         	worksector,
         	companyname,
@@ -63,8 +63,8 @@
         	:username,
         	:password,
         	:salt,
-        	:email
-        	:firtname,
+        	:email,
+        	:firstname,
         	:lastname,
         	:worksector,
         	:companyname,
@@ -82,21 +82,21 @@
             ':password'     => $password, 
             ':salt'         => $salt, 
             ':email'        => $_POST['email'],
-            ':firtname'		=> $_POST['firtname'],
+            ':firstname'	
+            => $_POST['firstname'],
             ':lastname'		=> $_POST['lastname'],
             ':worksector'	=> $_POST['worksector'],
             ':companyname'  => $_POST['companyname'],
             'worktitle'		=> $_POST['worktitle'],
-            'workdepartment'=> $_POST['workdepartment']
-
+            'workdepartment'=> $_POST['workdepartment'],
         	);
     		try {  
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
         } 
         catch(PDOException $ex){die("Failed to run query: " . $ex->getMessage()); }
-        header("Location: index.php");
-        die("Redirecting to index.php");
+        header("Location: ".BASE_URL);
+        die("Redirecting to ".BASE_URL);
     }
 
 

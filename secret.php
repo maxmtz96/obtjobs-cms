@@ -4,8 +4,8 @@
 
     if(empty($_SESSION['user']))    // checks if theirs a session if not redirects to index.php
     {
-        header("Location: index.php");
-        die("Redirecting to index.php"); 
+        header("Location: ".BASE_URL);
+        die("Redirecting to ".BASE_URL); 
     }
     else{   
     	require VIEW_ROOT . '/pages/secret.php';

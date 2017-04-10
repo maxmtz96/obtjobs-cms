@@ -7,7 +7,7 @@ $login_ok = '';
 	if (!empty($_POST)) { 
 		$query = "
 			SELECT *
-			FROM users
+			FROM employer
 			WHERE
 				username = :username
 			";
@@ -41,7 +41,7 @@ $login_ok = '';
 	if ($login_ok) { // when successful login does not allow salt and password to be called again 
 		unset($row['salt']);
 		unset($row['password']);
-		$_SESSION['user'] = $row;
+		$_SESSION['employer'] = $row;
 		
 		header("Location: ".BASE_URL);
 		die("Redirecting to: ".BASE_URL);
@@ -53,5 +53,5 @@ $login_ok = '';
 	}
 
 
-	require VIEW_ROOT . '/pages/login.php';
+	require VIEW_ROOT . '/pages/emplogin.php';
 ?>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 08, 2017 at 06:40 PM
--- Server version: 5.6.35
--- PHP Version: 7.0.15
+-- Host: localhost:3306
+-- Generation Time: Apr 10, 2017 at 03:08 PM
+-- Server version: 5.6.33
+-- PHP Version: 5.6.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -33,6 +33,13 @@ CREATE TABLE `employer` (
   `salt` char(15) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `employer`
+--
+
+INSERT INTO `employer` (`id`, `firstname`, `lastname`, `worksector`, `companyname`, `worktitle`, `workdepartment`, `username`, `password`, `salt`, `email`) VALUES
+(0, 'work', 'work', 'work', 'work', 'work', 'work', 'work', 'ee64c83cad20b0293ad628f264150bc7ac697fb0270d72ef7f2e4131a5d04b49', '42063cef2fffa94', 'work@work.com');
 
 -- --------------------------------------------------------
 
@@ -64,19 +71,14 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `password`, `sal
 (23, 'Kenyai', 'Hill', 'khill1996', '52e8b31975e98eea1d79a831ef8e0d6fecf6b41d8067653eb28e73e512ae8d6d', '1cd001a651748a9f', 'khill1996@gmail.com', 'Student', 'image_uploaded_from_ios_720.jpg', '', '', ''),
 (24, 'maximiliano', 'martinez', 'axm123', '04a8f0fc3d6f264cfff4dd484c2e3e104c137c7b7d9c65119e654e814db7864b', '71fc68302b2a39ce', 'maxm123@gmail.com', 'Student', 'file_720.jpg', '', '', ''),
 (25, 'Abrahym', 'Sharfeldden', 'abrahym', '2d03341eda4a7adb3b3d8af8fec9d16f02eba2351073e760f854b2a79a1aeba0', '2a5ac6d714fc935', 'abrahym1@gmail.com', 'Student', '', '', '', ''),
-(26, 'max', 'martinez', 'mxa123', '29cf9956338937fe42108a48c972e57904eeab552fd9feb9a26a2c09ebdf2d85', '4e1657db52f04e81', 'max12@gmail.com', 'Staff', '', '', '', ''),
-(27, 'max', 'martinez', 'mmm123', '2def94b7e6467ae161c3c7855f67ed7256b0fc5701d62c95823e108028bd60f3', '6c029dee6e837c6e', '123@gmail.com', 'Staff', '', '', '', ''),
-(28, 'max', 'mtz', 'amm123', '6c44990794310657a00bdbb19ee3bdf70c02999d7c96b59ca2ab11ff7ad85728', '25d5ea2867c842ac', 'max123@gmail.com', 'Employer', '', '', '', '');
+(26, 'Random', 'Person', 'rand123', 'c94b38cf891954ffbb72a1bd9f4d3d7295bb0de8bfb4227e7472900bf85c7351', 'ebe129931e1d5cf', 'rand123@gmail.com', 'Student', '', '', '', ''),
+(27, 'aaaa', 'aaaa', 'aaaa', '8d4d9e66d7bab14e49fb2b9bed3fae0769d66d5456afa05f9655a037e83f3873', '6a65b3176826aeaa', 'aaaa@gmail.com', 'Student', '', '', '', ''),
+(28, 'Keturah', 'Raymond', 'kraymond', '535a8f9ef4b9e7756ff37058c8cc805107d6fb5ac416c09d537cf78db3991b76', '3040b48259c6fa47', 'kray@gmail.com', 'Student', 'image_uploaded_from_ios_720.jpg', '', '', ''),
+(29, 'Agustin', 'Zaurelli', 'azaurelli', '9ae73f4590bffd6b88180820c02111da236e1e5f19b642530d740678b588e126', '229a8150576f561b', 'az@gmail.com', 'Student', 'Debate-Day-Group.jpg', '', '', '');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `employer`
---
-ALTER TABLE `employer`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -91,12 +93,7 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `employer`
---
-ALTER TABLE `employer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
