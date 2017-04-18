@@ -24,7 +24,7 @@
 
         <button type="submit">Create Account</button>
         <p class="message">Already registered? <a href="login.php">Login</a></p>
-        <p class="message">Empolyers sign up here <a href="employersignup.php">Login</a></p>
+        <p class="message">Empolyers sign up here <a href="empsignup.php">Sign up</a></p>
       </form>
     </div>
   </div>

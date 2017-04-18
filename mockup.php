@@ -12,7 +12,7 @@
 				SELECT *
 				FROM users
 
-				LIMIT 5
+				LIMIT 7
 			")->fetchAll(PDO::FETCH_ASSOC);
 	} elseif(isset($_SESSION['employer'])) {
 			$users = $db->query("

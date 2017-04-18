@@ -1,8 +1,8 @@
 <?php 
 	require 'app/start.php';
 	
-$submitted_username = ''; 
-$login_ok = '';
+	$submitted_username = ''; 
+	$login_ok = '';
 
 	if (!empty($_POST)) { 
 		$query = "

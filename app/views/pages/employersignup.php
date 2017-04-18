@@ -6,7 +6,7 @@
     <div class="form">
       <h1>Create an Account</h1>
       <h3>For Employers</h3>
-      <form method="post" class="login-form" action="employersignup.php"> 
+        <form method="post" class="login-form" action="empsignup.php"> 
         <input class="left" type="text" name="firstname" placeholder="First Name"/>
         <input class="right" type="text" name="lastname" placeholder="Last Name"/>
 
@@ -16,7 +16,7 @@
         <input class="left" type="Position" name="worktitle" placeholder="Work Title"/>
         <input class="right" type="Department" name="workdepartment" placeholder="Work Department"/>
 
-        <input class="left" type="Username" name="username" placeholder="Username"/>
+        <input class="left" type="username" name="username" placeholder="Username"/>
         <input class="right" type="email" name="email" placeholder="Email Address"/>
 
         <input class="left" type="password" name="password" placeholder="Password"/>

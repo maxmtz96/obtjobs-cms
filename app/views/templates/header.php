@@ -3,10 +3,13 @@
 <html>
 
 	<head>
+		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>/font-awesome-4.7.0/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>/css/style.css">	
 		<title>Opportunities for A Better Tomorrow</title>
 		
 		<script src="<?php echo BASE_URL; ?>/JS/script.js"></script>
+		<script src="<?php echo BASE_URL; ?>/JS/jquery-ui.min.js"></script>
+		<script src="<?php echo BASE_URL; ?>/JS/jquery.js"></script>
 	</head>
 	
 	<body>

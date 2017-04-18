@@ -10,6 +10,7 @@
       <input type="password" name="password" placeholder="Password"/>
       <button type="submit">login</button>
       <p class="message">Not registered? <a href="signup.php">Create an account</a></p>
+      <p class="message">Employer login here <a href="emplogin.php">Login</a></p>
     </form>
   </div>
 </div>

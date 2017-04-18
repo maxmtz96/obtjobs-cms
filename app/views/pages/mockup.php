@@ -3,13 +3,13 @@
   <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/mockup.css">
 <div class="main-content131">    
   <div id="filter" onclick="acc()">
-        <div id="SignUpDiv">
+       <div id="SignUpDiv">
           <?php if(isset($_SESSION['employer'])): ?>
             <a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-            <a href="<?php echo BASE_URL; ?>/secret.php">Signed in as <?php echo e($_SESSION['employer']['username'], ENT_QUOTES, 'UTF-8'); ?></a>      
+            <a href="<?php echo BASE_URL; ?>/profile.php">Signed in as <?php echo e($_SESSION['employer']['username'], ENT_QUOTES, 'UTF-8'); ?></a>     
           <?php elseif(isset($_SESSION['user'])): ?>
             <a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-            <a href="<?php echo BASE_URL; ?>/secret.php">Signed in as <?php echo e($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></a>
+            <a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $_SESSION['user']['username']; ?>">Signed in as <?php echo e($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></a>
           <?php else: ?>
             <a href="<?php echo BASE_URL; ?>/login.php">Sign In</a>
             <a href="<?php echo BASE_URL; ?>/signup.php">Sign Up</a>
@@ -72,7 +72,7 @@
         <?php next($user); ?> 
       <?php else: ?>
         <div class="content">
-          <a href="<?php echo BASE_URL; ?>/secret.php?user=<?php echo $user['username']; ?>">
+          <a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $user['username']; ?>">
             <div class="profile-container">
               <div class="profile-picture">
                 <img src="<?php echo BASE_URL; ?>/images/<?php echo e($user['image']); ?>">  

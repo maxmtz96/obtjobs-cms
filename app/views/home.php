@@ -4,10 +4,10 @@
 				<div id="SignUpDiv">
 					<?php if(isset($_SESSION['employer'])): ?>
 						<a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-						<a href="<?php echo BASE_URL; ?>/secret.php">Signed in as <?php echo e($_SESSION['employer']['username'], ENT_QUOTES, 'UTF-8'); ?></a>			
+						<a href="<?php echo BASE_URL; ?>/empprofile.php?user=<?php echo $_SESSION['employer']['username']; ?>">Signed in as <?php echo e($_SESSION['employer']['username'], ENT_QUOTES, 'UTF-8'); ?></a>		
 					<?php elseif(isset($_SESSION['user'])): ?>
 						<a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-						<a href="<?php echo BASE_URL; ?>/secret.php">Signed in as <?php echo e($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></a>
+						<a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $_SESSION['user']['username']; ?>">Signed in as <?php echo e($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></a>
 					<?php else: ?>
 						<a href="<?php echo BASE_URL; ?>/login.php">Sign In</a>
 						<a href="<?php echo BASE_URL; ?>/signup.php">Sign Up</a>

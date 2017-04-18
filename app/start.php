@@ -9,7 +9,7 @@ define('BASE_URL', 'http://localhost:8888/obtjobs-cms'); // Replace the director
 // $db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=cms','admin','password'); // replace dbname with the database name
 	$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
 	try { 
-		$db = new PDO('mysql:host=127.0.0.1;dbname=obtjobs-hiring','admin','password', $options); 
+		$db = new PDO('mysql:host=127.0.0.1;port=8889;dbname=obtjobs-hiring','admin','password', $options); 
 	}
 	catch(PDOException $ex){ 
 		die(
