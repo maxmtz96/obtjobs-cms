@@ -13,19 +13,31 @@
 	                        <img src="https://www.watch2gether.com/assets/w2guser-default-4cd04e39cfd59017ebad065028b8af9dfca8499a45a7b19ec20b1c478a751a77.png" alt="avatar" class="img-circle" />
 	                    <?php else: ?>
 	                        <img class="img-circle" src="<?php echo BASE_URL; ?>/uploads/<?php echo $users['image']; ?>">
-	                    <?php endif; ?> 
-
-					
+	                    <?php endif; ?> 					
 							<input type="file" name="files[]">
+					</div>
+				</div>
+				<div class="left link-container">
+					<div class="link-image linkedin" style="width:100%;">
+						<div class="icon-image" style="width:30px;height:30px;display:inline-block;">
+							<img width="100%" height="100%" src="<?php echo BASE_URL; ?>/images/github-icon.png">
+						</div>
+						<div class="linkedin_text" style="display:inline-block;">
+							<p>github.com/<input type="text" name="github" value="<?php echo e($users['github']); ?>"></p>
+						</div>
+					</div>
+					<div class="link-image github">
 					</div>
 				</div>
 				<div class="left about-container">
 					<div class="about-me">
-						<div class="about-me text">
-								<textarea name="aboutme" id="body" cols="40" rows="15"><?php echo e($users['aboutme']); ?></textarea>
+					<div id="links">
+                		<img src="<?php echo BASE_URL; ?>/images/github-icon.png"><br>
+                		<img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png">
+					</div>
 
-								
-							
+						<div class="about-me text">
+							<textarea name="aboutme" id="body" cols="40" rows="15"><?php echo e($users['aboutme']); ?></textarea>
 						</div>
 					</div>
 				</div>

@@ -169,3 +169,7 @@ html,body,p{margin:0;padding:0;}
                /*float:left;
                width:33.3%;*/
           }
+          .input{
+            display: inline;
+          }
+          

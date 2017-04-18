@@ -6,6 +6,7 @@
 		<div class="content-container">
 			<div class="container-left">
 				<div class="left profile-picture">
+
 				     <div class="image-container">
                         <?php if(empty($users['image'])): ?>
                             <img src="https://www.watch2gether.com/assets/w2guser-default-4cd04e39cfd59017ebad065028b8af9dfca8499a45a7b19ec20b1c478a751a77.png" alt="avatar" class="img-circle" />
@@ -14,6 +15,10 @@
                         <?php endif; ?> 
                     </div>
 				</div>
+					<div id="links">
+                		<a href="https://www.github.com/<?php echo $users['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
+                		<a href="https://www.linkedin.com/<?php echo $users['linkin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
+					</div>
 				<div class="left about-container">
 					<div class="about-me">
 						<div class="about-me_head">

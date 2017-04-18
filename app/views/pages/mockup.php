@@ -94,8 +94,8 @@
               </div>
 
               <div id="links">
-                <img src="<?php echo BASE_URL; ?>/images/github-icon.png">
-                <img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png">
+                <a href="https://www.github.com/<?php echo $user['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
+                <a href="https://www.linkedin.com/<?php echo $user['linkin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
               </div>
             </div>
           </a>
