@@ -16,13 +16,13 @@
                     </div>
 				</div>
 					<div id="links">
-                		<a href="https://www.github.com/<?php echo $users['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
-                		<a href="https://www.linkedin.com/<?php echo $users['linkin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
+                		<a target="_blank" href="https://www.github.com/<?php echo $users['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
+                		<a target="_blank" href="https://www.linkedin.com/<?php echo $users['linkedin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
 					</div>
 				<div class="left about-container">
 					<div class="about-me">
 						<div class="about-me_head">
-								<h1>About Me<hr></h1>
+							<h1>About Me<hr></h1>
 						</div>
 						<div class="about-me_text">
 							<?php if(isset($users['aboutme'])): ?>

@@ -18,24 +18,33 @@
 					</div>
 				</div>
 				<div class="left link-container">
-					<div class="link-image linkedin" style="width:100%;">
-						<div class="icon-image" style="width:30px;height:30px;display:inline-block;">
-							<img width="100%" height="100%" src="<?php echo BASE_URL; ?>/images/github-icon.png">
+					<div class="links" style="width:100%; margin:0;">
+						<div class="link-image github" style="width:90%;height:50px;margin:auto;">
+							<div class="icon-image" style="margin-right:5px;width:50px;height:50px;display:inline-block;">
+								<img width="100%" height="100%" src="<?php echo BASE_URL; ?>/images/github-icon.png">
+							</div>
+							<div class="github_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
+								<p>github.com/ <input type="text" name="github" value="<?php echo e($users['github']); ?>"></p>
+							</div>
 						</div>
-						<div class="linkedin_text" style="display:inline-block;">
-							<p>github.com/<input type="text" name="github" value="<?php echo e($users['github']); ?>"></p>
+						
+						<br>
+
+						<div class="link-image linkedin" style="width:100%;height:50px;margin:auto;">
+							<div class="icon-image" style="width:50px;height:50px;display:inline-block;">
+								<img width="100%" height="100%" src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png">
+							</div>
+							<div class="linkedin_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
+								<p>linkedin.com/ <input type="text" name="linkedin" value="<?php echo e($users['linkedin']); ?>"></p>
+							</div>
 						</div>
-					</div>
-					<div class="link-image github">
 					</div>
 				</div>
 				<div class="left about-container">
 					<div class="about-me">
-					<div id="links">
-                		<img src="<?php echo BASE_URL; ?>/images/github-icon.png"><br>
-                		<img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png">
-					</div>
-
+						<div class="about-me_head">
+							<h1>About Me<hr></h1>
+						</div>
 						<div class="about-me text">
 							<textarea name="aboutme" id="body" cols="40" rows="15"><?php echo e($users['aboutme']); ?></textarea>
 						</div>
@@ -91,23 +100,20 @@
 						<h1>Experience <hr></h1>
 						
 						<div class="exp-cont">
-								<p><input type="text" name="exploca1" value="<?php echo e($users['exploca1']); ?>"></p>
-								<div class="title_duration exp-title_exp-dura">
-									<div class="title exp-title">
-										<p><input type="text" name="exptitle1" value="<?php echo e($users['exptitle1']); ?>"></p>
-									</div>
-									<div class="duration exp-dura">
-										<p> JAN 2015 - JAN 2017</p>
-									</div>
+							<p>Location of Worksite: <input class="input_loca" type="text" name="exploca1" value="<?php echo e($users['exploca1']); ?>"></p>
+							<div class="title_duration exp-title_exp-dura">
+								<div class="title exp-title">
+									<p>Your work title: <input class="input_title" type="text" name="exptitle1" value="<?php echo e($users['exptitle1']); ?>"></p>
+								</div>
+								<div class="duration exp-dura">
+									<p> JAN 2015 - JAN 2017</p>
+								</div>
 
-									<div class="clear"></div>
-								</div>
-								<div class="desc exp-desc">
-									<p><input type="text" name="expdesc1" value="<?php echo e($users['expdesc1']); ?>"></p>
-								</div>
-							
-							
-							</form>
+								<div class="clear"></div>
+							</div>
+							<div class="desc exp-desc">
+								<p>Work Description: <input class="input_desc" type="text" name="expdesc1" value="<?php echo e($users['expdesc1']); ?>"></p>
+							</div>
 						</div>
 					</div>
 					<div class="section education-container">
@@ -115,11 +121,11 @@
 				
 						<div class="edu-cont">
 							<div class="location edu-name">
-								<p><input type="text" name="eduloca1" value="<?php echo e($users['eduloca1']); ?>"></p>
+								<p>Study Location: <input class="input_loca" type="text" name="eduloca1" value="<?php echo e($users['eduloca1']); ?>"></p>
 							</div>
 							<div class="title_duration exp-title_exp-dura">
 								<div class="title edu-title">
-									<p><input type="text" name="edutitle1" value="<?php echo e($users['edutitle1']); ?>"></p>
+									<p>Type of Education: <input class="input_title" type="text" name="edutitle1" value="<?php echo e($users['edutitle1']); ?>"></p>
 								</div>
 								<div class="duration edu-dura">
 									<p>JAN 2016 - JAN 2017</p>
@@ -128,7 +134,7 @@
 								<div class="clear"></div>
 							</div>
 							<div class="desc edu-desc">
-								<p><input type="text" name="edudesc1" value="<?php echo e($users['edudesc1']); ?>"></p>
+								<p>Education Description: <input class="input_desc" type="text" name="edudesc1" value="<?php echo e($users['edudesc1']); ?>"></p>
 							</div>
 						</div>
 					</div>
@@ -137,14 +143,15 @@
 
 						<div class="section proskill-list">
 							<div class="list-container">
+							List of skills: 
 								<ul>
-								<li><input type="text" name="proskill1" value="<?php echo e($users['proskill1']); ?>"></li>
-								<li><input type="text" name="proskill2" value="<?php echo e($users['proskill2']); ?>"></li>
-								<li><input type="text" name="proskill3" value="<?php echo e($users['proskill3']); ?>"></li>
-								<li><input type="text" name="proskill4" value="<?php echo e($users['proskill4']); ?>"></li>
-								<li><input type="text" name="proskill5" value="<?php echo e($users['proskill5']); ?>"></li>
-								<li><input type="text" name="proskill6" value="<?php echo e($users['proskill6']); ?>"></li>
-
+									<li><input type="text" name="proskill1" value="<?php echo e($users['proskill1']); ?>"></li>
+									<li><input type="text" name="proskill2" value="<?php echo e($users['proskill2']); ?>"></li>
+									<li><input type="text" name="proskill3" value="<?php echo e($users['proskill3']); ?>"></li>
+									<li><input type="text" name="proskill4" value="<?php echo e($users['proskill4']); ?>"></li>
+									<li><input type="text" name="proskill5" value="<?php echo e($users['proskill5']); ?>"></li>
+									<li><input type="text" name="proskill6" value="<?php echo e($users['proskill6']); ?>"></li>
+									
 									<div class="clear"></div>
 								</ul>
 							</div>

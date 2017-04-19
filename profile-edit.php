@@ -16,6 +16,8 @@
 
 		if(!empty($_POST)) {
 			$aboutme = $_POST['aboutme'];
+			$github = $_POST['github'];
+			$linkedin = $_POST['linkedin'];
 
 			$perskill1 = $_POST['perskill1'];
 			$perskill2 = $_POST['perskill2'];
@@ -53,6 +55,8 @@
 								UPDATE users 
 								SET image = :image,
 									aboutme    = :aboutme,
+									github 		= :github,
+									linkedin	= :linkedin,
 
 									perskill1  = :perskill1,
 									perskill2  = :perskill2,
@@ -82,6 +86,8 @@
 							$updateInfo->bindParam(":image", $filename);
 							$updateInfo->bindParam(":id", $_SESSION['user']['id']);
 							$updateInfo->bindParam(":aboutme", $aboutme);
+							$updateInfo->bindParam(":github", $github);
+							$updateInfo->bindParam(":linkedin", $linkedin);
 							$updateInfo->bindParam(":perskill1", $perskill1);
 							$updateInfo->bindParam(":perskill2", $perskill2);
 							$updateInfo->bindParam(":perskill3", $perskill3);
@@ -112,6 +118,8 @@
 				UPDATE users
 				SET
 					aboutme    = :aboutme,
+					github 		= :github,
+					linkedin	= :linkedin,
 
 					perskill1  = :perskill1,
 					perskill2  = :perskill2,
@@ -141,6 +149,8 @@
 
 				$updateInfo->bindParam(":id",$_SESSION['user']['id']);
 				$updateInfo->bindParam(":aboutme", $aboutme);
+				$updateInfo->bindParam(":github", $github);
+				$updateInfo->bindParam(":linkedin", $linkedin);
 				$updateInfo->bindParam(":perskill1", $perskill1);
 				$updateInfo->bindParam(":perskill2", $perskill2);
 				$updateInfo->bindParam(":perskill3", $perskill3);

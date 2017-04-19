@@ -6,7 +6,7 @@
      font-family:'Brandon Grotseque';
      src:url('Brandon_Grotseque/Brandon_bld_it.otf');
 }
-*{font-family:'PT Sans Narrow';text-shadow:0.5px 0.5px;}
+*{font-family:'PT Sans Narrow';}
 html,body,p{margin:0;padding:0;}
 .clear{clear:both;}
 .container{
@@ -28,8 +28,9 @@ html,body,p{margin:0;padding:0;}
                float:left;
                min-height:1231px;
                background:rgba(96,81,145,1);
-               color:#ddd;
+               color:#FFF;
                text-align:center;
+               text-shadow:-1px -1px #000;
           }
           .left{display:block;}
           .image-container{
@@ -47,6 +48,10 @@ html,body,p{margin:0;padding:0;}
                
                border-radius:100%;
                background:white;
+          }
+
+          .link-container{
+            margin-top:50px;
           }
           .about-me{
                padding:30px 0;
@@ -71,12 +76,6 @@ html,body,p{margin:0;padding:0;}
                float:left;
                list-style:none;
           }
-          .contact-me{
-          }
-          .contact-me_head{
-          }
-          .contact-me_text{
-          }
           .contact-me_text ul{
                min-height:200px;
                margin:0;
@@ -93,6 +92,7 @@ html,body,p{margin:0;padding:0;}
                float:left;
                background:transparent;
                min-height:1231px;
+               text-shadow:-1px -1px #FFF;
           }
           .right-content{
                min-height:1231px;
@@ -172,4 +172,12 @@ html,body,p{margin:0;padding:0;}
           .input{
             display: inline;
           }
+
+          .container-right input[type="text"]{
+            min-width:300px;
+            width:50%;
+            height:25px;
+            margin:5px;
+          }
+
           

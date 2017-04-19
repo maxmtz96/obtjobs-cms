@@ -8,8 +8,8 @@
 		<title>Opportunities for A Better Tomorrow</title>
 		
 		<script src="<?php echo BASE_URL; ?>/JS/script.js"></script>
-		<script src="<?php echo BASE_URL; ?>/JS/jquery-ui.min.js"></script>
 		<script src="<?php echo BASE_URL; ?>/JS/jquery.js"></script>
+		<script src="<?php echo BASE_URL; ?>/JS/jquery-ui.min.js"></script>
 	</head>
 	
 	<body>

@@ -15,33 +15,35 @@
 		$employer = $employer->fetch(PDO::FETCH_ASSOC);
 
 		if(!empty($_POST)) {
-			$aboutme = $_POST['aboutme'];
+			$aboutme 	= $_POST['aboutme'];
+			$github 	= $_POST['github'];
+			$linkedin 	= $_POST['linkedin'];
 
-			$perskill1 = $_POST['perskill1'];
-			$perskill2 = $_POST['perskill2'];
-			$perskill3 = $_POST['perskill3'];
-			$perskill4 = $_POST['perskill4'];
+			$perskill1 	= $_POST['perskill1'];
+			$perskill2 	= $_POST['perskill2'];
+			$perskill3 	= $_POST['perskill3'];
+			$perskill4 	= $_POST['perskill4'];
 			//$perskill5 = $_POST['perskill5'];
 			//$perskill6 = $_POST['perskill6'];
 
-			$exploca1 = $_POST['exploca1'];
-			$exptitle1 = $_POST['exptitle1'];
+			$exploca1 	= $_POST['exploca1'];
+			$exptitle1 	= $_POST['exptitle1'];
 			//$expdura1 = $_POST['expdura1'];
-			$expdesc1 = $_POST['expdesc1'];
+			$expdesc1 	= $_POST['expdesc1'];
 
-			$eduloca1 = $_POST['eduloca1'];
-			$edutitle1 = $_POST['edutitle1'];
+			$eduloca1 	= $_POST['eduloca1'];
+			$edutitle1 	= $_POST['edutitle1'];
 			//$edudura1 = $_POST['edudura1'];
-			$edudesc1 = $_POST['edudesc1'];
+			$edudesc1 	= $_POST['edudesc1'];
 
-			$proskill1 = $_POST['proskill1'];
-			$proskill2 = $_POST['proskill2'];
-			$proskill3 = $_POST['proskill3'];
-			$proskill4 = $_POST['proskill4'];
-			$proskill5 = $_POST['proskill5'];
-			$proskill6 = $_POST['proskill6'];
-			$address   = $_POST['address'];
-			$phone = $_POST['phone'];
+			$proskill1 	= $_POST['proskill1'];
+			$proskill2 	= $_POST['proskill2'];
+			$proskill3 	= $_POST['proskill3'];
+			$proskill4 	= $_POST['proskill4'];
+			$proskill5 	= $_POST['proskill5'];
+			$proskill6 	= $_POST['proskill6'];
+			$address   	= $_POST['address'];
+			$phone 		= $_POST['phone'];
 
 			if($_FILES['files']['error'][0] != 4) {
 				foreach($_FILES['files']['name'] as $file => $name){
@@ -53,6 +55,8 @@
 								UPDATE employer
 								SET image = :image,
 									aboutme    = :aboutme,
+									github 		= :github,
+									linkedin 	= :linkedin,
 
 									perskill1  = :perskill1,
 									perskill2  = :perskill2,
@@ -82,6 +86,8 @@
 							$updateInfo->bindParam(":image", $filename);
 							$updateInfo->bindParam(":id", $_SESSION['user']['id']);
 							$updateInfo->bindParam(":aboutme", $aboutme);
+							$updateInfo->bindParam(":github", $github);
+							$updateInfo->bindParam(":linkedin", $linkedin);
 							$updateInfo->bindParam(":perskill1", $perskill1);
 							$updateInfo->bindParam(":perskill2", $perskill2);
 							$updateInfo->bindParam(":perskill3", $perskill3);
@@ -112,6 +118,8 @@
 				UPDATE users
 				SET
 					aboutme    = :aboutme,
+					github 		= :github,
+					linkedin 	= :linkedin,
 
 					perskill1  = :perskill1,
 					perskill2  = :perskill2,
