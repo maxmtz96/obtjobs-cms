@@ -1,12 +1,8 @@
 <?php 
 	require 'app/start.php';
 
-	if(empty($_SESSION['user']))
+	if(!empty($_SESSION['user']))
 	{
-		header("Location; ".BASE_URL);
-		die ("Redirecting to ".BASE_URL);
-	} 
-	else{
 		$username = $_GET['user'];
 
 		$users = $db->prepare("SELECT * FROM users WHERE username = :username LIMIT 1");
@@ -18,6 +14,7 @@
 			$aboutme = $_POST['aboutme'];
 			$github = $_POST['github'];
 			$linkedin = $_POST['linkedin'];
+			$aspiring = $_POST['aspiring'];
 
 			$perskill1 = $_POST['perskill1'];
 			$perskill2 = $_POST['perskill2'];
@@ -57,6 +54,7 @@
 									aboutme    = :aboutme,
 									github 		= :github,
 									linkedin	= :linkedin,
+									aspiring 	= :aspiring,
 
 									perskill1  = :perskill1,
 									perskill2  = :perskill2,
@@ -87,6 +85,7 @@
 							$updateInfo->bindParam(":id", $_SESSION['user']['id']);
 							$updateInfo->bindParam(":aboutme", $aboutme);
 							$updateInfo->bindParam(":github", $github);
+							$updateInfo->bindParam(":aspiring", $aspiring);
 							$updateInfo->bindParam(":linkedin", $linkedin);
 							$updateInfo->bindParam(":perskill1", $perskill1);
 							$updateInfo->bindParam(":perskill2", $perskill2);
@@ -120,6 +119,7 @@
 					aboutme    = :aboutme,
 					github 		= :github,
 					linkedin	= :linkedin,
+					aspiring 	= :aspiring,
 
 					perskill1  = :perskill1,
 					perskill2  = :perskill2,
@@ -150,6 +150,7 @@
 				$updateInfo->bindParam(":id",$_SESSION['user']['id']);
 				$updateInfo->bindParam(":aboutme", $aboutme);
 				$updateInfo->bindParam(":github", $github);
+				$updateInfo->bindParam(":aspiring", $aspiring);
 				$updateInfo->bindParam(":linkedin", $linkedin);
 				$updateInfo->bindParam(":perskill1", $perskill1);
 				$updateInfo->bindParam(":perskill2", $perskill2);
@@ -176,4 +177,8 @@
 		
 		require VIEW_ROOT . '/pages/profile-edit.php';
 	}
+	else{
+		header("Location; ".BASE_URL);
+		die ("Redirecting to ".BASE_URL);
+	} 
 ?>

@@ -1,7 +1,7 @@
 <?php require VIEW_ROOT . '/templates/header.php'; ?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>/css/profile.css">
-
+<a href="<?php echo BASE_URL; ?>"><button class="dropbtn">Back to Home Page</button></a>
 	<div class="container">
 		<div class="content-container">
 			<div class="container-left">
@@ -16,8 +16,12 @@
                     </div>
 				</div>
 					<div id="links">
-                		<a target="_blank" href="https://www.github.com/<?php echo $users['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
-                		<a target="_blank" href="https://www.linkedin.com/<?php echo $users['linkedin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
+						<?php if(!empty($users['github'])): ?>
+                			<a target="_blank" href="https://www.github.com/<?php echo $users['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
+                		<?php endif; ?>
+                		<?php if(!empty($users['linkedin'])): ?>
+                			<a target="_blank" href="https://www.linkedin.com/<?php echo $users['linkedin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
+                		<?php endif; ?>
 					</div>
 				<div class="left about-container">
 					<div class="about-me">
@@ -98,8 +102,8 @@
 				<div class="right-content">	
 					<div class="profile-header">
 						<div class="profile_head">
-							<h1><?php echo $users['firstname']." ". $users['lastname']; ?> </h1>
-							<h1>Web Designer</h1>
+							<h1><?php echo ucwords($users['firstname']." ". $users['lastname']); ?> </h1>
+							<h1><?php echo $users['aspiring'] ?></h1>
 						</div>
 						</div>
 					<div class="section experience-container">

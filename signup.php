@@ -54,16 +54,14 @@
         	salt,
         	email,
             firstname,
-            lastname,
-            status
+            lastname
         	) VALUES(
         	:username,
         	:password,
         	:salt,
         	:email,
             :firstname,
-            :lastname,
-            :status
+            :lastname
         	)
         ";
 
@@ -77,8 +75,7 @@
             ':salt'         => $salt, 
             ':email'        => $_POST['email'], 
             ':firstname'    => $_POST['firstname'],
-            ':lastname'     => $_POST['lastname'],
-            ':status'       => $_POST['status']
+            ':lastname'     => $_POST['lastname']
         	);
     		try {  
             $stmt = $db->prepare($query); 

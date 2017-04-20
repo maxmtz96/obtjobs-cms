@@ -2,7 +2,7 @@
 
   <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/employer.css">
 
-<div class="signup">
+<div class="signup-container">
     <div class="form">
       <h1>Create an Account</h1>
       <h3>For Employers</h3>
@@ -27,5 +27,4 @@
         <p class="message">Already registered? <a href="login.php">Login</a></p>
       </form>
     </div>
-
-<?php require VIEW_ROOT . '/templates/footer.php'; ?>
+<?php //require VIEW_ROOT . '/templates/footer.php'; ?>

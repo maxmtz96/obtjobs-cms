@@ -31,7 +31,7 @@
         $query = " 
             SELECT 
                 1 
-            FROM employer 
+            FROM employer
             WHERE 
                 email = :email 
         "; 
@@ -53,23 +53,24 @@
         	password,
         	salt,
         	email,
-        	firstname,
-        	lastname,
-        	worksector,
-        	companyname,
-        	worktitle,
-        	workdepartment
-        	) VALUES(
+            firstname,
+            lastname,
+            worksector,
+            companyname,
+            worktitle,
+            workdepartment
+            ) VALUES(
         	:username,
         	:password,
         	:salt,
         	:email,
-        	:firstname,
-        	:lastname,
-        	:worksector,
-        	:companyname,
-        	:worktitle,
-        	:workdepartment
+            :firstname,
+            :lastname,
+            :worksector,
+            :companyname,
+            :worktitle,
+            :workdepartment
+      
         	)
         ";
 
@@ -81,14 +82,13 @@
         	':username'     => $_POST['username'], 
             ':password'     => $password, 
             ':salt'         => $salt, 
-            ':email'        => $_POST['email'],
-            ':firstname'	
-            => $_POST['firstname'],
-            ':lastname'		=> $_POST['lastname'],
-            ':worksector'	=> $_POST['worksector'],
+            ':email'        => $_POST['email'], 
+            ':firstname'    => $_POST['firstname'],
+            ':lastname'     => $_POST['lastname'],
+            ':worksector'   => $_POST['worksector'],
             ':companyname'  => $_POST['companyname'],
-            'worktitle'		=> $_POST['worktitle'],
-            'workdepartment'=> $_POST['workdepartment'],
+            ':worktitle'    => $_POST['worktitle'],
+            ':workdepartment'=>$_POST['workdepartment'],
         	);
     		try {  
             $stmt = $db->prepare($query); 
@@ -100,5 +100,5 @@
     }
 
 
-	require VIEW_ROOT . '/pages/employersignup.php';
+	require VIEW_ROOT . '/pages/empsignup.php';
 ?>

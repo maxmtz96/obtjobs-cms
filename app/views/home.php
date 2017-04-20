@@ -1,19 +1,9 @@
 <?php require VIEW_ROOT . '/templates/header.php'; ?>
+
+<?php require VIEW_ROOT . '/templates/sessions.php'; ?>
+
 		<div id="content">
 			<div id="content_contanier">
-				<div id="SignUpDiv">
-					<?php if(isset($_SESSION['employer'])): ?>
-						<a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-						<a href="<?php echo BASE_URL; ?>/empprofile.php?user=<?php echo $_SESSION['employer']['username']; ?>">Signed in as <?php echo e($_SESSION['employer']['username'], ENT_QUOTES, 'UTF-8'); ?></a>		
-					<?php elseif(isset($_SESSION['user'])): ?>
-						<a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-						<a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $_SESSION['user']['username']; ?>">Signed in as <?php echo e($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></a>
-					<?php else: ?>
-						<a href="<?php echo BASE_URL; ?>/login.php">Sign In</a>
-						<a href="<?php echo BASE_URL; ?>/signup.php">Sign Up</a>
-					<?php endif; ?>
-				</div>
-
 				<div id="content_title"><h1>Hire OBT Gradutes</h1></div>
 					<?php if(empty($users)): ?>
 						<p>something is wrong</p>
@@ -22,32 +12,44 @@
 							<?php if(empty($user['image'])): ?>
 								<?php next($user); ?>
 							<?php else: ?>
-								<div class="profile_div purp" onclick="cat()">
-									<h1 class="profile_info"><?php echo e($user['firstname'].' '.$user['lastname']); ?></h1>
-									<img class="profile_info" src="images/<?php echo e($user['image']); ?>">
-									<h3 class="profile_info"><?php echo e($user['status']); ?></h3>
-									<?php if(empty($user['skill1'])): ?>
-											<p></p>
-									<?php else: ?>
-										<h2 class="profile_info"><?php echo e($user['skill1']); ?> | <?php echo e($user['skill2']); ?> | <?php echo e($user['skill3']); ?></h2>
-									<?php endif; ?>
-								</div>
-								<div id="myModal" class="modal">				
-									<div id="myPopup" class="modal-content" style="vertical-align: middle;" >
-										<h1><strong><?php echo e($user['firstname'].' '.$user['lastname']); ?></strong></h1>
-										<h2>Programmer</h2>
-										<span><img src="images/<?php echo e($user['image']); ?>"></span>
-										<p> "I am an aspiring Web Developer with an eye for detail and passion for efficient user experiences. 
-										I want to challenge myself at learning more advanced and technical languages."</p>
-										<div id="links">
-										
-											<img src="images/phone.png">
-											<img src="images/email.png">
-											<img src="images/Linkedin_icon.png">
-											<img src="images/twt.png">
-											<img src="images/github-icon.png">
-										</div>
-					    			</div>
+								<div class="profile-display">
+									<div id="student<?php echo e($user['id']); ?>" class="trainees blur">
+										<img src="<?php echo BASE_URL; ?>/uploads/<?php echo e($user['image']); ?>">
+											<h1><?php echo ucwords(e($user['firstname'].' '.$user['lastname'])); ?></h1>
+
+											<h3><?php //echo e($user['aboutme']); ?></h3>
+
+											<h3>Skills:</h3>
+										<ul>
+										<?php if(!empty($user['proskill1'])): ?>
+											<li class="skill"><?php echo e($user['proskill1']); ?></li>
+										<?php endif; ?>
+										<?php if(!empty($user['proskill2'])): ?>
+											<li class="skill"><?php echo e($user['proskill2']); ?></li>
+										<?php endif; ?>
+										<?php if(!empty($user['proskill3'])): ?>
+											<li class="skill"><?php echo e($user['proskill3']); ?></li>
+										<?php endif; ?>
+										</ul>
+									</div>
+									<div id="myModal" class="modal">	
+										<div class="modal-content myPopup" style="vertical-align: middle;" >
+											<span style="width:50px;height:50px;"><i class="fa fa-times" aria-hidden="true">close</i></span>
+											<h1><strong><?php echo e($user['firstname'].' '.$user['lastname']); ?></strong></h1>
+											<h2>Web Developer</h2>
+											
+											<span><img src="images/Business-Professional-Headshots-00018.jpg"></span>
+											<p><?php echo e($user['aboutme']); ?></p>
+											<div id="links">
+												<img src="images/Phone-128.png">
+												<img src="images/Email-128.png">
+												<img src="images/Linkedin_icon.png">
+												<img src="images/Twitter-128.png">
+												<img src="images/github-icon.png">
+											</div>
+									    </div>
+									</div>
+									
 								</div>
 							<?php endif; ?>
 						<?php endforeach; ?>
@@ -61,4 +63,4 @@
 			<div class="Foot_Tab" style="background-color:rgb(186,199,54);"><h1>Employee Testiomonials</h1></div>
 		</div>	
 
-<?php require VIEW_ROOT . '/templates/footer.php'; ?>
+<?php // require VIEW_ROOT . '/templates/footer.php'; ?>

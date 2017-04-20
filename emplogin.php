@@ -25,18 +25,20 @@
 		$row = $stmt->fetch(); 
 		// Security measures for password
 		if ($row) {
+
 			$check_password = hash('sha256', $_POST['password'] . $row['salt']);
 			for($round = 0; $round < 65536; $round++){
 				 $check_password = hash('sha256', $check_password . $row['salt']);
+			}
+			
+			// checks if password is correct
+			if ($check_password === $row ['password']){
+				$login_ok = true;
+			}
+			else{
+				$login_ok = false;
+			}
 		}
-		// checks if password is correct
-		if ($check_password === $row ['password']){
-			$login_ok = true;
-		}
-		else{
-			$login_ok = false;
-		}
-	}
 
 	if ($login_ok) { // when successful login does not allow salt and password to be called again 
 		unset($row['salt']);

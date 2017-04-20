@@ -1,20 +1,12 @@
 <?php require VIEW_ROOT . '/templates/header.php'; ?>
 
-  <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/mockup.css">
+<?php require VIEW_ROOT . '/templates/sessions.php'; ?>
+
+<link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/mockup.css">
+
 <div class="main-content131">    
   <div id="filter" onclick="acc()">
-       <div id="SignUpDiv">
-          <?php if(isset($_SESSION['employer'])): ?>
-            <a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-            <a href="<?php echo BASE_URL; ?>/profile.php">Signed in as <?php echo e($_SESSION['employer']['username'], ENT_QUOTES, 'UTF-8'); ?></a>     
-          <?php elseif(isset($_SESSION['user'])): ?>
-            <a href="<?php echo BASE_URL; ?>/logout.php">Log out</a>
-            <a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $_SESSION['user']['username']; ?>">Signed in as <?php echo e($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?></a>
-          <?php else: ?>
-            <a href="<?php echo BASE_URL; ?>/login.php">Sign In</a>
-            <a href="<?php echo BASE_URL; ?>/signup.php">Sign Up</a>
-          <?php endif; ?>
-        </div>
+
     <p>PICK STUDENTS WHO ARE RIGHT FOR YOU!!!</p>
 
     <div id="filter-content">
@@ -22,10 +14,14 @@
         <button class="accordion">Skills</button>
         <div class="panel">
           <ul>
-            <input type="checkbox"><li>HTML</li><br>
-            <input type="checkbox"><li>CSS</li><br>
-            <input type="checkbox"><li>PHP</li><br>
-            <input type="checkbox"><li>Javascript</li><br>
+            <input type="checkbox"><li>Administrative Assistance</li><br>
+            <input type="checkbox"><li>Back-end Developer</li><br>
+            <input type="checkbox"><li>Customer Service</li><br>
+            <input type="checkbox"><li>Database Management</li><br>
+            <input type="checkbox"><li>Human Resources</li><br>
+            <input type="checkbox"><li>Microsoft Office Specialist</li><br>
+            <input type="checkbox"><li>Secretary</li><br>
+            <input type="checkbox"><li>Web Designer</li><br>
           </ul>
         </div>
       </div>
@@ -33,9 +29,11 @@
         <button class="accordion">Boroughs</button>
         <div class="panel">
           <ul>
+            <input type="checkbox"><li>Staten Island</li><br>
+            <input type="checkbox"><li>The Bronx</li><br>
             <input type="checkbox"><li>Queens</li><br>
-            <input type="checkbox"><li>Brooklyn</li><br>
             <input type="checkbox"><li>Manhattan</li><br>
+            <input type="checkbox"><li>Brooklyn</li><br>
           </ul>
         </div> 
       </div>
@@ -51,8 +49,8 @@
     </div>
   </div>
 
-    
-  <div id="onfilter">
+    <!-- Currently Disabled due to lack of functionality -->
+  <div id="onfilter" style="display:none;">
     <ul>
       <li>You are here :</li>
       <a href="#"><li>HyperText Markup Language</li></a>
@@ -71,15 +69,18 @@
     <?php if(empty($user['image'])): ?>
         <?php next($user); ?> 
       <?php else: ?>
-        <div class="content">
-          <a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $user['username']; ?>">
+        <div class="content" style="margin-top:20px;"><!-- Remove Margin once #onfilter is displayed --> 
             <div class="profile-container">
               <div class="profile-picture">
-                <img src="<?php echo BASE_URL; ?>/images/<?php echo e($user['image']); ?>">  
+                <a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $user['username']; ?>">
+                  <img src="<?php echo BASE_URL; ?>/uploads/<?php echo e($user['image']); ?>"> 
+                </a>
               </div>
               <div class="profile-info">
                 <div class="profile-info-container">
-                  <h1><?php echo e($user['firstname'].' '.$user['lastname']); ?></h1>
+                  <a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $user['username']; ?>">
+                    <h1><?php echo ucwords(e($user['firstname'].' '.$user['lastname'])); ?></h1>
+                  </a>
                   <h2>Web Design and Coding Fundamentals</h2>
                   <div id="cool">
                     <?php if (empty($user['skill1'])): ?>
@@ -94,11 +95,14 @@
               </div>
 
               <div id="links">
-                <a href="https://www.github.com/<?php echo $user['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
-                <a href="https://www.linkedin.com/<?php echo $user['linkin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
+                <?php if(!empty($user['github'])): ?>
+                  <a href="https://www.github.com/<?php echo $user['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
+                <?php endif; ?>
+                <?php if(!empty($user['linkedin'])): ?>
+                  <a href="https://www.linkedin.com/<?php echo $user['linkin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
+                <?php endif; ?>
               </div>
             </div>
-          </a>
         </div>
     <?php endif; ?>
   <?php endforeach; ?>

@@ -8,6 +8,7 @@
     <form method="post" action="emplogin.php" class="login-form">
       <input type="text" name="username" placeholder="Username"/>
       <input type="password" name="password" placeholder="Password"/>
+      
       <button type="submit">login</button>
       <p class="message">Not registered? <a href="empsignup.php">Create an account</a></p>
     </form>

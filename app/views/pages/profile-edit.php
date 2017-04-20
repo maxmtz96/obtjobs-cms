@@ -35,7 +35,7 @@
 								<img width="100%" height="100%" src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png">
 							</div>
 							<div class="linkedin_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
-								<p>linkedin.com/ <input type="text" name="linkedin" value="<?php echo e($users['linkedin']); ?>"></p>
+								<p>linkedin.com/in/ <input type="text" name="linkedin" value="<?php echo e($users['linkedin']); ?>"></p>
 							</div>
 						</div>
 					</div>
@@ -76,9 +76,9 @@
 						</div>
 						<div class="contact-me_text">
 							<ul>
-								<li>Address: <input type="text" name="address" value="<?php echo e($users['address']); ?>"> <br></li>
-								<li>Email: <?php echo e($_SESSION['user']['email'], ENT_QUOTES, 'UTF-8'); ?> <br></li>
-								<li><input type="text" name="phone" value="<?php echo e($users['phone']); ?>"></li>
+								<li>Address: &nbsp;&nbsp;<input type="text" name="address" value="<?php echo e($users['address']); ?>"> <br></li>
+								<li>Email: &nbsp;&nbsp;<?php echo e($_SESSION['user']['email'], ENT_QUOTES, 'UTF-8'); ?> <br></li>
+								<li>Phone Number:&nbsp;&nbsp;<input type="text" name="phone" value="<?php echo e($users['phone']); ?>"></li>
 							</ul>							
 						</div>
 					</div>					
@@ -91,9 +91,9 @@
 					<div class="profile-header">
 						<div class="profile_head">
 
-							<h1><?php echo $users ['firstname']." ". $users['lastname'];?></h1>
+							<h1><?php echo ucwords($users ['firstname']." ". $users['lastname']); ?></h1>
 
-							<h1>Web Designer</h1>
+							<h1><input type="text" name="aspiring" value="<?php echo e($users['aspiring']); ?>"></h1>
 						</div>
 					</div>
 					<div class="section experience-container">

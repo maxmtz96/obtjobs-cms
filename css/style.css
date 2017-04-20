@@ -4,7 +4,7 @@ html , body{
     width: 100%;
    
 }
-
+a:link, a:visited, a:hover, a:active{text-decoration:none; color:initial; cursor:pointer; background:initial;}
 * {
     font-family: 'myFirstFont';
 }
@@ -20,7 +20,42 @@ html , body{
     src: url(../fonts/brandon-grot/Brandon_thin.otf);
 }
 
-#Nav{
+.header-container{
+    width:100%;
+    height:auto;
+    text-align:center;
+    background-color: rgba(75,59,125,1);
+}
+.header-content{
+    width:95%;
+    margin:auto;
+    min-height:65px;
+    padding:10px 0 5px;
+}
+.company-logo{
+    float:left;
+}
+.logo-container{
+    height:50px;
+}
+.logo-container img{
+    max-width:100%;
+    height:100%;
+}
+.navigation-container{
+    float:right;
+}
+.navigation-container ul{
+    list-style-type:none;
+    text-decoration:none;
+}
+
+.navigation-container ul li{
+    display:inline-block;
+    padding:0 7px;
+    color:white;
+}
+/*#Nav{
     width:100%;
     height: 50px;   
     text-align: center;
@@ -47,7 +82,7 @@ html , body{
 
 #navbar ul, li{
     height: auto;
-    min-height: 
+    min-height:;
     text-align: center;
     display: inline;
     padding-right: 15px;
@@ -58,7 +93,7 @@ html , body{
 
 #navbar li a{
     text-decoration: none;
-        color: white;
+    color: white;
     
 }
  #menu{
@@ -67,7 +102,7 @@ html , body{
     padding-right: 15px;
     float: right;
     position: relative; 
- }
+ }*/
 
  #content{
     width: 100%;
@@ -96,7 +131,7 @@ html , body{
 
 }
 
-
+/*
 #SignUpDiv {
     width: 100%;
     height: 32px;
@@ -122,7 +157,9 @@ html , body{
 
 #SignUpDiv a:hover{
     opacity: .5;
-}
+}*/
+
+
 .profile_div{
     height: 380px;
     width: 350px;
@@ -251,4 +288,271 @@ position: relative;
     display: inline-block;
   
  }
+
+/* new css */
+.session-container{
+    width:100%;
+    height:auto;
+}
+.signup{
+    padding:0 100px;
+    min-height:75px;
+    float:right;
+    margin:12.5px auto 0;
+}
+
+/* Dropdown Button */
+.dropbtn, .signup button {
+    background:rgba(186,199,54,1);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background:rgba(186,199,54,1);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin:2px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content1, .dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content1 a, .dropdown-content2 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content1 a:hover, .dropdown-content2 a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* Allows only 3 students to show on the landing page(index.php) */
+#content_contanier .profile_div:nth-child(n+8){
+    display:none;
+}
+
+
+/* Anthony's CSS */
+.trainees {
+    width: 492px;
+    background-color: #cdcdcd;
+    z-index: 1;
+    display: inline-table;
+    margin: 17px;
+    padding-top: 19px;
+    padding: 0px;
+    height: 200px;
+    cursor: pointer;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    border-radius: 5px;
+    border: black;
+    border-style: solid;
+    border-width: 2px;
+    
+
+   
+}
+
+/*
+#content_contanier:hover .profile_div{
+    background-color: gray;
+    opacity: .25;
+    -webkit-transform: scale(.8);
+       -moz-transform: scale(.8);
+        -ms-transform: scale(.8);
+         -o-transform: scale(.8);
+            transform: scale(.8);
+}
+#content_contanier .profile_div:hover {
+    background-color:white;
+    box-shadow: none;
+    opacity: 10;
+    -webkit-transform: scale(1.2);
+       -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+         -o-transform: scale(1.2);
+            transform: scale(1.2);
+}
+*/
+
+.trainees img {
+    border-radius: 100%;
+    width: 170px;
+    height: 170px;
+    transition: 2000s;
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+}
+
+.trainees h1 {
+    color: black;
+    line-height: 0px;
+    font-family: "Pt sans narrow";
+}
+
+.trainees h5{
+    font-size: 24px;
+    color: black;
+
+}
+
+.trainees h3 {
+    color: black;
+    font-family: "mySecondFont";
+    font-size: 24px;
+    font-size: 22px;
+    padding: 0px;
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+.trainees p{
+    font-size: 20px;
+    color: black;
+}
+
+.skill {
+    display: inline-block;
+    font-size: 20px;
+    padding: 3px;
+    margin: 4px;
+    background-color: rgb(75,59,125);
+    color: white;
+    font-weight: bolder;
+    box-shadow: 3px 6px 5px #888888;
+}
+
+#buttons {
+    text-align: center;
+    position: relative;
+    bottom: 129px;   
+}
+
+.button {
+    display: inline-block;
+    background-color: #cdcdcd;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: white;
+    border: black;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 4px 4px 24px #000000;
+
+
+}
+
+#hire {
+    height: 584px;
+    width: 100%;
+    color: #605191;
+    position: relative;
+}
+
+#graduates {
+    text-align: center;
+    padding-top: 22px;
+    height: 92px
+}
+
+#skills {
+    text-align: left;
+    width: 503px;
+    margin: 1px;
+    padding-left: 159px;
+    font-size: 20px;
+    padding-bottom: 15px;
+    letter-spacing: 1.3px;
+
+}
+
+#skills p {
+    font-family: "mySecondFont";
+}
+
+
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    height: 350px;
+    width: 539px;
+    padding: 24px 80px;
+    margin: auto;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    margin-top: 200px;
+    position: relative;
+}
+
+.myPopup{
+    vertical-align: middle;
+    
+}
+.myPopup span img{
+    float: left;
+    height: 181px;
+    width: 181px;
+    border-radius: 100%;
+    bottom: 52px;
+    position: relative;
+}
+
+.myPopup h2{
+position: relative;
+    left: 92px;
+}
+
+#links img {
+    height: 50px;
+    width: 50px;
+    padding: 8px;
+}
 
