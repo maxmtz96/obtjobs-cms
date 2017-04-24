@@ -91,7 +91,7 @@ a:link, a:visited, a:hover, a:active{text-decoration:none; color:initial; cursor
 }
 .mid-container{
     min-height:400px;
-    margin:20px;
+    margin:40px;
     text-align:center;
 }
 .bot-container{
