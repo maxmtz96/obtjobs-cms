@@ -90,8 +90,7 @@ a:link, a:visited, a:hover, a:active{text-decoration:none; color:initial; cursor
     text-shadow:-1px -1px 5px #333;
 }
 .mid-container{
-    min-height:400px;
-    margin:1000px;
+    padding:20px 0;
     text-align:center;
 }
 .bot-container{
@@ -106,6 +105,7 @@ a:link, a:visited, a:hover, a:active{text-decoration:none; color:initial; cursor
     width:30%;
     height:auto;
     display: inline-flex;
+    margin-top:20px;
     padding:5px;
     color: black;
     cursor: pointer;
