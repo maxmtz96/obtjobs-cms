@@ -2,9 +2,12 @@
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL;?>/css/profile.css">
 
+<a href="profile.php?user=<?php echo $_SESSION['user']['username']; ?> 
+				">
+	<button type="button" style="font:14px 'Arial';width:100px;height:50px;background:rgba(198,206,69,1);float: left;z-index: 21;display:block;" >Back to profile</button>
+</a>
 <div class="container">
-
-	<form onsubmit="window.location = '<?php echo BASE_URL; ?>profile.php?user=<?php echo $users[$username]; ?>'" action="profile-edit.php?user=<?php echo $username; ?>" method="POST" enctype="multipart/form-data">
+	<form action="profile-edit.php?user=<?php echo $username; ?>" method="POST" enctype="multipart/form-data">
 		<div class="content-container">
 			<div class="container-left">
 				<div class="left profile-picture">
@@ -19,23 +22,45 @@
 				</div>
 				<div class="left link-container">
 					<div class="links" style="width:100%; margin:0;">
-						<div class="link-image github" style="width:90%;height:50px;margin:auto;">
+						<div class="link-image github" >
 							<div class="icon-image" style="margin-right:5px;width:50px;height:50px;display:inline-block;">
-								<img width="100%" height="100%" src="<?php echo BASE_URL; ?>/images/github-icon.png">
+								<i class="fa fa-github-square fa-3x" aria-hidden="true"></i>
 							</div>
-							<div class="github_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
+							<div class="icon-text github_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
 								<p>github.com/ <input type="text" name="github" value="<?php echo e($users['github']); ?>"></p>
 							</div>
 						</div>
 						
-						<br>
+						<div class="clear"></div>
 
-						<div class="link-image linkedin" style="width:100%;height:50px;margin:auto;">
-							<div class="icon-image" style="width:50px;height:50px;display:inline-block;">
-								<img width="100%" height="100%" src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png">
+
+						<div class="link-image linkedin" >
+							<div class="icon-image" >
+								<i class="fa fa-linkedin-square fa-3x" aria-hidden="true" style="min-width:100%;min-height:100%;"></i>
 							</div>
-							<div class="linkedin_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
+							<div class="icon-text linkedin_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
 								<p>linkedin.com/in/ <input type="text" name="linkedin" value="<?php echo e($users['linkedin']); ?>"></p>
+							</div>
+						</div>
+						<div class="clear"></div>
+
+						<div class="link-image facebook">
+							<div class="icon-image" style="width:50px;height:50px;display:inline-block;">
+								<i class="fa fa-facebook-square fa-3x" aria-hidden="true" style="min-width:100%;min-height:100%;"></i>
+							</div>
+							<div class="icon-text facebook_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
+								<p>facebook.com/ <input type="text" name="facebook" value="<?php echo e($users['facebook']); ?>"></p>
+							</div>
+						</div>	
+
+						<div class="clear"></div>					
+
+						<div class="link-image twitter">
+							<div class="icon-image" style="width:50px;height:50px;display:inline-block;">
+								<i class="fa fa-twitter-square fa-3x" aria-hidden="true" style="min-width:100%;min-height:100%;"></i>
+							</div>
+							<div class="icon-text twittern_text" style="display:inline-block;vertical-align:middle;height:50px;margin-left:5px;">
+								<p>twitter.com/ <input type="text" name="twitter" value="<?php echo e($users['twitter']); ?>"></p>
 							</div>
 						</div>
 					</div>
@@ -85,15 +110,15 @@
 				</div>
 			</div>
 			<div class="container-right">
-				<a href="profile.php?user=<?php echo $_SESSION['user']['username']; ?> 
-				"><button type="button" style="font:14px 'Arial';width:100px;height:50px;background:rgba(198,206,69,1);float: right;z-index: 21;display:block;" >Back to profile</button></a>
+				<button type="submit" style="font:14px 'Arial';width:100px;height:50px;background:rgba(198,206,69,1);float: right;z-index: 21;">Edit Information</button>
+
 				<div class="right-content">
 					<div class="profile-header">
 						<div class="profile_head">
 
 							<h1><?php echo ucwords($users ['firstname']." ". $users['lastname']); ?></h1>
 
-							<h1><input type="text" name="aspiring" value="<?php echo e($users['aspiring']); ?>"></h1>
+							<h1>Desired Position: <input type="text" name="aspiring" value="<?php echo e($users['aspiring']); ?>"></h1>
 						</div>
 					</div>
 					<div class="section experience-container">

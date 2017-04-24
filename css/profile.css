@@ -181,6 +181,15 @@ html,body,p{margin:0;padding:0;}
             height:25px;
             margin:5px;
           }
-          
-
-          
+   
+.link-image{
+  width:100%;
+  height:50px;
+}       
+.icon-image{
+  float:left;
+}.icon-text{
+  float:right;
+  padding-right:20px;
+  padding-top:10px;
+}   

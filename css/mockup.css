@@ -1,9 +1,5 @@
 html , body{
-  margin: 0px;
-    height: 1024px;
-    width: 100%;
-    position: absolute;
-    overflow-x: hidden;
+  margin: 0;
    
 }
 

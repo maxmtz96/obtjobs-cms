@@ -12,8 +12,12 @@
 
 		if(!empty($_POST)) {
 			$aboutme = $_POST['aboutme'];
+
 			$github = $_POST['github'];
 			$linkedin = $_POST['linkedin'];
+			$facebook = $_POST['facebook'];
+			$twitter = $_POST['twitter'];
+
 			$aspiring = $_POST['aspiring'];
 
 			$perskill1 = $_POST['perskill1'];
@@ -50,33 +54,37 @@
 						if(move_uploaded_file($_FILES['files']['tmp_name'][$file],'uploads/'.$filename)) {
 							$updateInfo = $db->prepare("
 								UPDATE users 
-								SET image = :image,
-									aboutme    = :aboutme,
+								SET image 		= :image,
+									aboutme    	= :aboutme,
+
 									github 		= :github,
 									linkedin	= :linkedin,
+									facebook 	= :facebook,
+									twitter		= :twitter,
+
 									aspiring 	= :aspiring,
 
-									perskill1  = :perskill1,
-									perskill2  = :perskill2,
-									perskill3  = :perskill3,
-									perskill4  = :perskill4,
+									perskill1  	= :perskill1,
+									perskill2  	= :perskill2,
+									perskill3  	= :perskill3,
+									perskill4  	= :perskill4,
 
-									exploca1   = :exploca1,
-									exptitle1  = :exptitle1,
-									expdesc1   = :expdesc1,
+									exploca1   	= :exploca1,
+									exptitle1  	= :exptitle1,
+									expdesc1   	= :expdesc1,
 
-									eduloca1 = :eduloca1,
-									edutitle1 = :edutitle1,
-									edudesc1 = :edudesc1,
+									eduloca1 	= :eduloca1,
+									edutitle1 	= :edutitle1,
+									edudesc1 	= :edudesc1,
 
-									proskill1  = :proskill1,
-									proskill2  = :proskill2,
-									proskill3  = :proskill3,
-									proskill4  = :proskill4,
-									proskill5  = :proskill5,
-									proskill6  = :proskill6,
-									address    = :address,
-									phone = :phone
+									proskill1  	= :proskill1,
+									proskill2  	= :proskill2,
+									proskill3  	= :proskill3,
+									proskill4  	= :proskill4,
+									proskill5  	= :proskill5,
+									proskill6  	= :proskill6,
+									address   	= :address,
+									phone 		= :phone
 
 								WHERE id = :id
 								");
@@ -84,25 +92,34 @@
 							$updateInfo->bindParam(":image", $filename);
 							$updateInfo->bindParam(":id", $_SESSION['user']['id']);
 							$updateInfo->bindParam(":aboutme", $aboutme);
+
 							$updateInfo->bindParam(":github", $github);
-							$updateInfo->bindParam(":aspiring", $aspiring);
 							$updateInfo->bindParam(":linkedin", $linkedin);
+							$updateInfo->bindParam(":facebook", $facebook);
+							$updateInfo->bindParam(":twitter", $twitter);
+
+							$updateInfo->bindParam(":aspiring", $aspiring);
+
 							$updateInfo->bindParam(":perskill1", $perskill1);
 							$updateInfo->bindParam(":perskill2", $perskill2);
 							$updateInfo->bindParam(":perskill3", $perskill3);
 							$updateInfo->bindParam(":perskill4", $perskill4);
+
 							$updateInfo->bindParam(":exploca1", $exploca1);
 							$updateInfo->bindParam(":exptitle1", $exptitle1);
 							$updateInfo->bindParam(":expdesc1", $expdesc1);
+
 							$updateInfo->bindParam(":eduloca1", $eduloca1);
 							$updateInfo->bindParam(":edutitle1",$edutitle1);
 							$updateInfo->bindParam(":edudesc1", $edudesc1);
+
 							$updateInfo->bindParam(":proskill1", $proskill1);
 							$updateInfo->bindParam(":proskill2", $proskill2);
 							$updateInfo->bindParam(":proskill3", $proskill3);
 							$updateInfo->bindParam(":proskill4", $proskill4);
 							$updateInfo->bindParam(":proskill5", $proskill5);
 							$updateInfo->bindParam(":proskill6", $proskill6);
+
 							$updateInfo->bindParam(":address" , $address);
 							$updateInfo->bindParam(":phone" , $phone);
 
@@ -116,60 +133,71 @@
 				$updateInfo = $db->prepare("
 				UPDATE users
 				SET
-					aboutme    = :aboutme,
+					aboutme    	= :aboutme,
 					github 		= :github,
 					linkedin	= :linkedin,
+					facebook 	= :facebook,
+					twitter		= :twitter,
 					aspiring 	= :aspiring,
 
-					perskill1  = :perskill1,
-					perskill2  = :perskill2,
-					perskill3  = :perskill3,
-					perskill4  = :perskill4,
+					perskill1  	= :perskill1,
+					perskill2  	= :perskill2,
+					perskill3  	= :perskill3,
+					perskill4  	= :perskill4,
 			
 
-					exploca1   = :exploca1,
-					exptitle1  = :exptitle1,
-					expdesc1   = :expdesc1,
+					exploca1   	= :exploca1,
+					exptitle1  	= :exptitle1,
+					expdesc1   	= :expdesc1,
 
-					eduloca1 = :eduloca1,
-					edutitle1 = :edutitle1,
-					edudesc1 = :edudesc1,
+					eduloca1 	= :eduloca1,
+					edutitle1 	= :edutitle1,
+					edudesc1 	= :edudesc1,
 
-					proskill1  = :proskill1,
-					proskill2  = :proskill2,
-					proskill3  = :proskill3,
-					proskill4  = :proskill4,
-					proskill5  = :proskill5,
-					proskill6  = :proskill6,
-					address    = :address,
-					phone = :phone
+					proskill1  	= :proskill1,
+					proskill2  	= :proskill2,
+					proskill3  	= :proskill3,
+					proskill4  	= :proskill4,
+					proskill5  	= :proskill5,
+					proskill6  	= :proskill6,
+					address    	= :address,
+					phone 		= :phone
 
 					WHERE id=:id
 				");
 
-				$updateInfo->bindParam(":id",$_SESSION['user']['id']);
+				$updateInfo->bindParam(":id", $_SESSION['user']['id']);
 				$updateInfo->bindParam(":aboutme", $aboutme);
+
 				$updateInfo->bindParam(":github", $github);
-				$updateInfo->bindParam(":aspiring", $aspiring);
 				$updateInfo->bindParam(":linkedin", $linkedin);
+				$updateInfo->bindParam(":facebook", $facebook);
+				$updateInfo->bindParam(":twitter", $twitter);
+
+				$updateInfo->bindParam(":aspiring", $aspiring);
+
 				$updateInfo->bindParam(":perskill1", $perskill1);
 				$updateInfo->bindParam(":perskill2", $perskill2);
 				$updateInfo->bindParam(":perskill3", $perskill3);
 				$updateInfo->bindParam(":perskill4", $perskill4);
+
 				$updateInfo->bindParam(":exploca1", $exploca1);
 				$updateInfo->bindParam(":exptitle1", $exptitle1);
 				$updateInfo->bindParam(":expdesc1", $expdesc1);
+
 				$updateInfo->bindParam(":eduloca1", $eduloca1);
 				$updateInfo->bindParam(":edutitle1",$edutitle1);
 				$updateInfo->bindParam(":edudesc1", $edudesc1);
+
 				$updateInfo->bindParam(":proskill1", $proskill1);
 				$updateInfo->bindParam(":proskill2", $proskill2);
 				$updateInfo->bindParam(":proskill3", $proskill3);
 				$updateInfo->bindParam(":proskill4", $proskill4);
 				$updateInfo->bindParam(":proskill5", $proskill5);
 				$updateInfo->bindParam(":proskill6", $proskill6);
-				$updateInfo->bindParam(":address", $address);
-				$updateInfo->bindParam(":phone", $phone);
+				
+				$updateInfo->bindParam(":address" , $address);
+				$updateInfo->bindParam(":phone" , $phone);
 
 				$updateInfo->execute();
 			}

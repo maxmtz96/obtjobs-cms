@@ -17,10 +17,16 @@
 				</div>
 					<div id="links">
 						<?php if(!empty($users['github'])): ?>
-                			<a target="_blank" href="https://www.github.com/<?php echo $users['github'];?>"><img src="<?php echo BASE_URL; ?>/images/github-icon.png"></a>
+                			<a target="_blank" href="https://www.github.com/<?php echo $users['github'];?>"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>
                 		<?php endif; ?>
                 		<?php if(!empty($users['linkedin'])): ?>
-                			<a target="_blank" href="https://www.linkedin.com/<?php echo $users['linkedin'];?>"><img src="<?php echo BASE_URL; ?>/images/Linkedin_icon.png"></a>
+                			<a target="_blank" href="https://www.linkedin.com/<?php echo $users['linkedin'];?>"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+                		<?php endif; ?>
+                		<?php if(!empty($users['facebook'])): ?>
+                			<a target="_blank" href="https://www.facebook.com/<?php echo $users['facebook'];?>"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
+                		<?php endif; ?>
+                		<?php if(!empty($users['twitter'])): ?>
+                			<a target="_blank" href="https://www.twitter.com/<?php echo $users['twitter'];?>"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
                 		<?php endif; ?>
 					</div>
 				<div class="left about-container">
@@ -87,18 +93,21 @@
 			</div>
 			<div class="container-right">
 				<?php if($username == $_SESSION['user']['username']): ?>
-					<div class="profile-drpdwn" style="float: right;width:100%; height:100%; background:lightgrey;position:relative;">
+						<div class="dropdown-contentprofile-drpdwn" style="float:right;width:100%;height:100%;background:lightgrey;position:relative;">
+							<a href="profile-edit.php?user=<?php echo $_SESSION['user']['username']; ?>
+								"><button type="submit" style="font:14px 'Arial';width:100px;height:50px;background:rgba(198,206,69,1);float: right;z-index: 21;">Edit Profile</button></a>
+						</div>
+					<!-- <div class="profile-drpdwn" style="float: right;width:100%; height:100%; background:lightgrey;position:relative;">
 						<div class="dropdown">
 							<button onclick="myFunction()" class="dropbtn"><i class="fa fa-caret-down"></i
 							></button>
 							<div id="myDropdown" class="dropdown-content">
-								<a href="profile-edit.php?user=<?php echo $_SESSION['user']['username']; ?>
+								<a href="profile-edit.php?user=<?php // echo $_SESSION['user']['username']; ?>
 								">Edit</a>
 							</div>
 						</div>
-					</div>
-					<?php else: ?>
-					<?php endif; ?>
+					</div> -->					
+				<?php endif; ?>
 				<div class="right-content">	
 					<div class="profile-header">
 						<div class="profile_head">

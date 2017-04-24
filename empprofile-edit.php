@@ -53,32 +53,32 @@
 						if(move_uploaded_file($_FILES['files']['tmp_name'][$file],'uploads/'.$filename)) {
 							$updateInfo = $db->prepare("
 								UPDATE employer
-								SET image = :image,
-									aboutme    = :aboutme,
+								SET image 		= :image,
+									aboutme    	= :aboutme,
 									github 		= :github,
 									linkedin 	= :linkedin,
 
-									perskill1  = :perskill1,
-									perskill2  = :perskill2,
-									perskill3  = :perskill3,
-									perskill4  = :perskill4,
+									perskill1  	= :perskill1,
+									perskill2  	= :perskill2,
+									perskill3  	= :perskill3,
+									perskill4  	= :perskill4,
 
-									exploca1   = :exploca1,
-									exptitle1  = :exptitle1,
-									expdesc1   = :expdesc1,
+									exploca1   	= :exploca1,
+									exptitle1  	= :exptitle1,
+									expdesc1   	= :expdesc1,
 
-									eduloca1 = :eduloca1,
-									edutitle1 = :edutitle1,
-									edudesc1 = :edudesc1,
+									eduloca1 	= :eduloca1,
+									edutitle1 	= :edutitle1,
+									edudesc1 	= :edudesc1,
 
-									proskill1  = :proskill1,
-									proskill2  = :proskill2,
-									proskill3  = :proskill3,
-									proskill4  = :proskill4,
-									proskill5  = :proskill5,
-									proskill6  = :proskill6,
-									address    = :address,
-									phone = :phone
+									proskill1  	= :proskill1,
+									proskill2  	= :proskill2,
+									proskill3  	= :proskill3,
+									proskill4  	= :proskill4,
+									proskill5  	= :proskill5,
+									proskill6  	= :proskill6,
+									address    	= :address,
+									phone 		= :phone
 
 								WHERE id = :id
 								");
@@ -104,8 +104,8 @@
 							$updateInfo->bindParam(":proskill4", $proskill4);
 							$updateInfo->bindParam(":proskill5", $proskill5);
 							$updateInfo->bindParam(":proskill6", $proskill6);
-							$updateInfo->bindParam(":address" , $address);
-							$updateInfo->bindParam(":phone" , $phone);
+							$updateInfo->bindParam(":address", $address);
+							$updateInfo->bindParam(":phone", $phone);
 
 							$updateInfo->execute();
 						}

@@ -66,7 +66,7 @@
   <p>something is wrong</p>
 <?php else: ?>
   <?php foreach($users as $user): ?>
-    <?php if(empty($user['image'])): ?>
+    <?php if(empty($user['image']) || empty($user['proskill1']) || empty($user['aspiring'])): ?>
         <?php next($user); ?> 
       <?php else: ?>
         <div class="content" style="margin-top:20px;"><!-- Remove Margin once #onfilter is displayed --> 
@@ -81,14 +81,14 @@
                   <a href="<?php echo BASE_URL; ?>/profile.php?user=<?php echo $user['username']; ?>">
                     <h1><?php echo ucwords(e($user['firstname'].' '.$user['lastname'])); ?></h1>
                   </a>
-                  <h2>Web Design and Coding Fundamentals</h2>
+                  <h2><?php echo ucwords($user['aspiring']); ?></h2>
                   <div id="cool">
-                    <?php if (empty($user['skill1'])): ?>
-                      <p></p>
+                    <?php if(empty($user['proskill1'])): ?>
+                      <p>nothing is showing</p>
                     <?php else: ?>
-                      <button disabled><?php echo e($user['skill1']); ?></button>
-                      <button disabled><?php echo e($user['skill2']); ?></button>
-                      <button disabled><?php echo e($user['skill3']); ?></button>
+                      <button><?php echo e($user['proskill1']); ?></button>
+                      <button><?php echo e($user['proskill2']); ?></button>
+                      <button><?php echo e($user['proskill3']); ?></button>
                     <?php endif; ?>
                   </div>
                 </div>
